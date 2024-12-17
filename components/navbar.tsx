@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { UserButton } from "@clerk/nextjs";
 import { Button } from "./ui/button";
+import { ModeToggle } from "./mode-toggle";
 
 const poppins = Poppins({
   weight: "600",
@@ -19,11 +20,9 @@ const Navbar = () => {
           TALK TO ME
         </h2>
       </Link>
-      <Button className="ml-auto mr-4" variant="premium">
-        Upgrade
-      </Button>
-      <div>
-        {" "}
+      <div className="ml-auto flex items-center gap-3">
+        <Button variant="premium">Upgrade</Button>
+        <ModeToggle />
         <UserButton />
       </div>
     </div>
