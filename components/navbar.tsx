@@ -13,7 +13,7 @@ const poppins = Poppins({
 
 const Navbar = () => {
   return (
-    <div className="flex items-center px-4 py-6 bg-primary/10 h-10">
+    <div className="flex items-center px-4 py-3 bg-primary/10 ">
       <Menu className="md:hidden block" />
       <Link href="/">
         <h2 className={cn("tracking-wide text-xl", poppins.className)}>
