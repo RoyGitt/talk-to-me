@@ -1,10 +1,10 @@
-import { Menu } from "lucide-react";
 import Link from "next/link";
 import { Poppins } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { UserButton } from "@clerk/nextjs";
 import { Button } from "./ui/button";
 import { ModeToggle } from "./mode-toggle";
+import MobileSidebar from "./mobile-sidebar";
 
 const poppins = Poppins({
   weight: "600",
@@ -13,10 +13,15 @@ const poppins = Poppins({
 
 const Navbar = () => {
   return (
-    <div className="flex items-center px-4 py-3 bg-primary/10 ">
-      <Menu className="md:hidden block" />
+    <div className="flex items-center px-4 py-3 bg-primary/10">
+      <MobileSidebar />
       <Link href="/">
-        <h2 className={cn("tracking-wide text-xl", poppins.className)}>
+        <h2
+          className={cn(
+            "tracking-wide text-xl hidden md:block",
+            poppins.className
+          )}
+        >
           TALK TO ME
         </h2>
       </Link>

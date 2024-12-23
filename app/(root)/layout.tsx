@@ -6,9 +6,11 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <>
       <nav>
         <Navbar />
-        <Sidebar />
       </nav>
-      <main>{children}</main>
+      <main className="flex">
+        <Sidebar />
+        <div className="p-5 flex-1"> {children}</div>
+      </main>
     </>
   );
 };

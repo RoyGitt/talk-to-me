@@ -1,35 +1,13 @@
 "use client";
 
+import { routes } from "@/constants";
 import { cn } from "@/lib/utils";
-import { Home, Plus, Settings } from "lucide-react";
 import { usePathname } from "next/navigation";
-
-const routes = [
-  {
-    icon: Home,
-    href: "/",
-    label: "Home",
-    pro: false,
-  },
-  {
-    icon: Plus,
-    href: "/companion/new",
-    label: "Create",
-    pro: false,
-  },
-  {
-    icon: Settings,
-    href: "/settings",
-    label: "Settings",
-    pro: false,
-  },
-];
 
 const Sidebar = () => {
   const pathname = usePathname();
-
   return (
-    <nav className="bg-primary/10 w-20 min-h-screen py-10">
+    <nav className="bg-primary/10 w-20 min-h-screen py-10 md:block hidden">
       <ul className="flex flex-col items-center justify-center gap-8">
         {routes.map((route) => (
           <li
